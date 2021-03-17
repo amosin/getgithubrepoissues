@@ -19,6 +19,10 @@ npm i
 Run Script
 node app.js $Organization $Repo
 
-ex: node app.js algorand go-algorand
+ex:
+
+```bash
+node app.js algorand go-algorand
+```
 
 Result is a JSON with all the repo issues
