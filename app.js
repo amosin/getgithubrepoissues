@@ -3,8 +3,7 @@ const axios = require('axios');
 var args = process.argv.slice(2);
 
 const getRepoIssues = (org,repo, callback) => {
-    const topics = [];
-    axios.get( 'https://api.github.com/repos/' + org + '/' + repo + '/issues?state=all')
+    axios.get( 'https://api.github.com/repos/' + org + '/' + repo + '/issues?state=open')
     .then(function (response) {
       // handle success
       callback(response.data)
@@ -16,5 +15,9 @@ const getRepoIssues = (org,repo, callback) => {
 }
 
 getRepoIssues(args[0],args[1], (response) => {
-    console.log(response)
+    let openIssuesLabel = {}
+    for(let issue of response) {
+        openIssuesLabel[issue.title] = issue.url
+    }
+    console.log(openIssuesLabel)
 })

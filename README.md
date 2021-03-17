@@ -1,5 +1,7 @@
 # getgithubrepoissues
 
+This script will return a list of open issues with their URL of a specified Github repo.
+
 Prerequisites:
 node (tested on v14.11.0)
 
@@ -25,4 +27,8 @@ ex:
 node app.js algorand go-algorand
 ```
 
-Result is a JSON with all the repo issues
+Result is a JSON with all the OPEN repo issues with their respective URL
+
+{
+'Open Issue title': 'URL'
+}
